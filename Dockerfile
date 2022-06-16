@@ -20,7 +20,7 @@ WORKDIR /install
 RUN apt-get update -y
 RUN apt-get install wget -y
 RUN wget https://dot.net/v1/dotnet-install.sh
-RUN ./dotnet-install.sh -c Current --runtime aspnetcore -y
+RUN sudo ./dotnet-install.sh -c Current --runtime aspnetcore -y
 WORKDIR /app
 COPY --from=build-env /app/out .
 ENTRYPOINT ["dotnet", "MyWebApp.dll"]
