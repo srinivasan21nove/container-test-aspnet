@@ -22,6 +22,7 @@ RUN apt-get install wget -y
 RUN wget https://dot.net/v1/dotnet-install.sh
 RUN chmod a+rwx dotnet-install.sh
 RUN ./dotnet-install.sh -c Current --runtime aspnetcore
+RUN apt install libicu-dev -y
 WORKDIR /app
 COPY --from=build-env /app/out .
 ENTRYPOINT ["/root/.dotnet/dotnet", "MyWebApp.dll"]
