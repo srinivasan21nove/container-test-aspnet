@@ -17,7 +17,7 @@ public class IndexModel : PageModel
      public string GetMachineName()
     {
     try{
-    return "Machine: " + System.Environment.Machine;
+    return "Machine: " + System.Environment.MachineName;
     }
     catch{
     return "unable to retrice system details";
