@@ -11,12 +11,17 @@ public class IndexModel : PageModel
     {
         _logger = logger;
     }
-
     public void OnGet()
     {
     }
      public string GetMachineName()
     {
-        return "Machine: " + System.Environment.MachineName;
+    try{
+    return "Machine: " + System.Environment.MachineName;
+    }
+    catch{
+    return "unable to retrice system details";
+    }
+       
     }
 }
