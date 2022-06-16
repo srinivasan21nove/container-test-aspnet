@@ -17,4 +17,4 @@ jobs:
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag dotnet-containerid-test:v1
     - name: Push the Docker image
-      run: docker push srinivasan21nove/dotnet-containerid-test:v1
+      run: docker push --all-tags srinivasan21nove/dotnet-containerid-test
