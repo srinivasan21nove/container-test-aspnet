@@ -15,4 +15,8 @@ public class IndexModel : PageModel
     public void OnGet()
     {
     }
+     public string GetMachineName()
+    {
+        return "Machine: " + System.Environment.MachineName;
+    }
 }
