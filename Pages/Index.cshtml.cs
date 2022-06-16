@@ -12,8 +12,8 @@ public class IndexModel : PageModel
         _logger = logger;
     }
 
-    public JsonResult OnGet()
+    public void OnGet()
     {
-	return Json("Machine: " + System.Environment.MachineName);
+	#return Json("Machine: " + System.Environment.MachineName);
     }
 }
