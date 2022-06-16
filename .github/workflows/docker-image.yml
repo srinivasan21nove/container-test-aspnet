@@ -15,6 +15,6 @@ jobs:
         username: ${{ secrets.docker_user}}
         password: ${{ secrets.docker_pass}}
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag dotnet-containerid-test:$(date +%s)
+      run: docker build . --file Dockerfile --tag dotnet-containerid-test:$(GITHUB_RUN_ID)
     - name: Push the Docker image
-      run: docker push --all-tags srinivasan21nove/dotnet-containerid-test
+      run: docker push --all-tags srinivasan21nove/dotnet-containerid-test:$(GITHUB_RUN_ID)
