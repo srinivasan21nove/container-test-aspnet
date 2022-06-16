@@ -24,4 +24,4 @@ RUN chmod a+rwx dotnet-install.sh
 RUN ./dotnet-install.sh -c Current --runtime aspnetcore
 WORKDIR /app
 COPY --from=build-env /app/out .
-ENTRYPOINT ["dotnet", "MyWebApp.dll"]
+ENTRYPOINT [".dotnet/dotnet", "MyWebApp.dll"]
