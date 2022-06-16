@@ -17,6 +17,8 @@ RUN dotnet publish -c Release -o out
 # ENTRYPOINT ["dotnet", "MyWebApp.dll"]
 FROM ubuntu
 WORKDIR /install
+RUN apt-get update
+RUN apt-get install wget
 RUN wget https://dot.net/v1/dotnet-install.sh
 RUN ./dotnet-install.sh -c Current --runtime aspnetcore
 WORKDIR /app
