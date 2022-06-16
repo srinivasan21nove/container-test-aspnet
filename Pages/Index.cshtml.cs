@@ -14,6 +14,6 @@ public class IndexModel : PageModel
 
     public void OnGet()
     {
-	#return Json("Machine: " + System.Environment.MachineName);
+ @*	// return Json("Machine: " + System.Environment.MachineName); *@
     }
 }
